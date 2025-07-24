@@ -134,10 +134,10 @@ TRAINING_STRATEGY="auxiliary_only"
 
 ## Advanced Strategy Implementation
 
-Based on our paper findings, **Strategy B (Mixed Auxiliary with Pre-generated Rationales)** achieved the best performance (EmoryNLP: 44.29%, MELD: 70.11%). Here's how to implement different strategies manually:
+Based on our paper findings, **Strategy B (Mixed Auxiliary with Pre-generated Rationales)** achieved the best performance. Here's how to implement different strategies manually:
 
 ### Strategy A: Sequential Curriculum Training (Default Implementation)
-This is what the script implements by default - sequential training of each task.
+
 
 ### Strategy B: Mixed Auxiliary with Pre-generated Rationales (Best Performance)
 
@@ -161,11 +161,6 @@ bash train_coe.sh
 # - Speaker identification task data  
 # - STEeR-generated rationale data
 
-# Example script to mix datasets:
-cat /path/to/roleplay_data.json \
-    /path/to/speaker_data.json \
-    ./experiments/[MODEL]/lora/[DATASET]/STEeR/memory.json \
-    > mixed_auxiliary_dataset.json
 ```
 
 #### Step 3: Joint Training on Mixed Dataset
